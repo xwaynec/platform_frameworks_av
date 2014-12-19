@@ -30,6 +30,7 @@
 namespace android {
 
 sp<IMediaHTTPService> CreateHTTPServiceInCurrentJavaContext() {
+#if 0
     if (AndroidRuntime::getJavaVM() == NULL) {
         ALOGE("CreateHTTPServiceInCurrentJavaContext called outside "
               "JAVA environment.");
@@ -65,6 +66,9 @@ sp<IMediaHTTPService> CreateHTTPServiceInCurrentJavaContext() {
     }
 
     return httpService;
+#else
+    return NULL;
+#endif
 }
 
 }  // namespace android
